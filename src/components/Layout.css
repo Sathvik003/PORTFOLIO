@@ -1,0 +1,115 @@
+/* Layout specific styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-logo a {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid var(--text-primary);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.navbar-logo a:hover {
+  background-color: var(--text-primary);
+  color: #000;
+  box-shadow: 0 0 15px var(--accent-glow, rgba(255, 255, 255, 0.5));
+}
+
+.navbar-email a {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.navbar-email a:hover {
+  color: var(--accent-color);
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.sliding-link {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  height: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.sliding-link span {
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.sliding-link:hover span {
+  transform: translateY(-100%);
+  color: var(--accent-color);
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  left: 3rem;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 90;
+}
+
+.social-links-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.social-links-vertical a {
+  color: var(--text-secondary);
+  transition: all 0.3s;
+}
+
+.social-links-vertical a:hover {
+  color: var(--accent-color);
+  transform: translateY(-3px);
+  filter: drop-shadow(0 0 8px var(--accent-glow));
+}
+
+.sidebar-line {
+  width: 1px;
+  height: 90px;
+  background-color: var(--text-secondary);
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 1rem; }
+  .navbar-email { display: none; }
+  .navbar-links { gap: 1rem; }
+  .sidebar { left: 1rem; display: none; /* hide on small mobiles */ }
+}
